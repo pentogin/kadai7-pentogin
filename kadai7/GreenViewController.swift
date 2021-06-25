@@ -16,9 +16,8 @@ class GreenViewController: UIViewController {
     @IBAction func resultButton(_ sender: Any) {
         let num1 = Int(textField1.text ?? "") ?? 0
         let num2 = Int(textField2.text ?? "") ?? 0
-        let calculate = num1 - num2
-        result.text = String(calculate)
-        self.textField1.resignFirstResponder()
-        self.textField2.resignFirstResponder()
+        result.text = String(num1 - num2)
+        textField1.resignFirstResponder()
+        textField2.resignFirstResponder()
     }
 }
