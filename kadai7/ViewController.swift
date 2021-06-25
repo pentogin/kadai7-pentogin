@@ -9,21 +9,15 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = UIColor.white
-    }
+    @IBOutlet private weak var textField1: UITextField!
+    @IBOutlet private weak var textField2: UITextField!
+    @IBOutlet private weak var result: UILabel!
     
-    @IBOutlet  private weak var textField1: UITextField!
-    @IBOutlet  private weak var textField2: UITextField!
-    @IBOutlet  private weak var result: UILabel!
-    
-    @IBAction  func resultButton(_ sender: Any) {
+    @IBAction func resultButton(_ sender: Any) {
         let num1 =  Int(textField1.text ?? "") ?? 0
         let num2 =  Int(textField2.text ?? "") ?? 0
-        let calculate = num1 + num2
-        result.text = String(calculate)
-        self.textField1.resignFirstResponder()
-        self.textField2.resignFirstResponder()
+        result.text = String(num1 + num2)
+        textField1.resignFirstResponder()
+        textField2.resignFirstResponder()
     }
 }
